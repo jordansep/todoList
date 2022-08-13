@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+}
+:root{
+    --colorPO: #051014;
+    --colorPT:#2E2F2F;
+    --colorPTr: #A599B5;
+    --colorPF: #CDDDDD;
+    --colorPFi: #ACBDBA;
+}
+body{
+    background-color: var(--colorPT);
+    color: var(--colorPF);
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+}
+
+ /* Section */
+.toDoSection{
+    grid-column: 3 / 12;
+    border: 1px solid var(--colorPTr);
+    padding: 10px;
+    width: 100%;
+    margin-top: 2em;
+}
+
+/* Main DIV */
+.toDoForm{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid var(--colorPTr);
+    font-size: 1.3em;
+    padding-bottom: 6px;
+}
+.toDoForm input{
+    outline: none;
+    height: 2em;
+    width: 50%;
+    padding: 11px 3px;
+    background-color: var(--colorPTr);
+    border: none;
+    color:var(--colorPO);
+    font-weight: 700;
+    margin: 0 7px;
+}
+.toDoForm input::placeholder{
+    color: var(--colorPT);
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.toDoForm .toDoButton{
+    padding: 0.23em;
+    background-color: var(--colorPT);
+    color:  var(--colorPF);
+    border: none;
+    box-shadow: 0 0 2.3px var(--colorPTr);
+    border-radius: 5px;
+    width: 4em;
+    height: 1.7em;
+    font-weight: 300;
+    font-size: 1em;
+}
+.toDoForm .toDoButton:hover{
+    background-color: var(--colorPTr);
+    color: var(--colorPO);
+}
+.toDoForm .toDoButton:active{
+    box-shadow: -1px -1px 1px var(--colorPO);
+}
+/* Utilidades */
+.more{
+    padding: 10px;
+}
+.more a{
+    text-decoration: none;
+    color: var(--colorPTr);
+
+    cursor: pointer;
+}
+/* List */
+.toDoList{
+    padding-top: 10px;
+}
+.toDoList ul{
+    list-style: none;
+}
+.toDoList li{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    margin: 4px;
+    border: 1px solid var(--colorPTr);
+}
+
+.toDoList li p{
+    width: 30px;
+    height: 19px;
+    text-align: center;
+    cursor: pointer;
+}
+.toDoList p:hover{
+    background-color: #c96d6d;
+}
+.toDoList .itemChecked{
+    border: 1px solid rgba(60, 143, 96, 0.685);
+    background-color: rgba(79, 139, 105, 0.267);
+}
+sub{
+    grid-column: 8/9;
+}
+
+@media screen and (max-width: 980px) {
+    .toDoForm{
+        flex-direction: column;
+        padding: 0.3em;
+        gap: .4em;
+    }
+    .toDoForm input{
+        height: 2em;
+        width: 90%;
+        font-size: 0.8em;
+    }
+    .toDoForm .toDoButton{
+        height: 1.46em;
+        font-size: 1em;
+    }
+    .toDoList li{
+        font-size: 1.3em;
+    }
+
+}
